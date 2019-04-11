@@ -533,6 +533,14 @@ int console_execute(const char *str){
    if (strcmp(u,"fgman") == 0){  //--  Foreground manager
       fg_set_state(1);
    }else 
+   if (strcmp(u,"add") == 0){ //-- Adds two integers. Args: <num1> <num2>
+	int a, b;
+	u = strtok(0," ");
+	a = atoi(u);
+	u = strtok(0," ");
+	b = atoi(u);
+	printf("%d + %d = %d\n",a,b,a+b);
+	}else
    if (strcmp(u,"mouse") == 0){  //--  Activate the mouse
       while (!kb_ready()){
          get_mouse_pos(&mouse_x,&mouse_y);
